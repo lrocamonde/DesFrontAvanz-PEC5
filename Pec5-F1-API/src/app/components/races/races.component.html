@@ -1,0 +1,21 @@
+<div class="container mt-5">
+    <div class="col-md-3 text-start">
+        <a routerLink="/" class="btn btn-danger">Back</a>
+    </div>
+    <div *ngIf="season" class="row animate_animated animate__bounce animate__fadeIn ">
+        <mat-card *ngFor="let race of season.Races" class="col-md-9 mb-3 mt-3 ms-auto me-auto bg-light ">
+            <mat-card-title>Round: {{race.round}}</mat-card-title>        
+            <mat-card-content *ngIf="race.details">
+                <mat-tab-group>
+                    <mat-tab label="Race name">  {{race.raceName}} </mat-tab>
+                    <mat-tab label="Date"> {{race.date}} </mat-tab>
+                  </mat-tab-group>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-raised-button color="primary" *ngIf="!race.details" (click)="showDetails(race.round)">SHOW DETAILS</button>
+                <button mat-raised-button color="warn" *ngIf="race.details" (click)="hideDetails(race.round)">HIDE DETAILS</button>
+              </mat-card-actions>
+        </mat-card>
+    </div>
+</div>
+
