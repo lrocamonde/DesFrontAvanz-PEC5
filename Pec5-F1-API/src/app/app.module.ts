@@ -22,7 +22,7 @@ import { environment } from '../environments/environment';
     SeasonComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
