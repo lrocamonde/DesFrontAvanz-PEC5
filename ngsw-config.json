@@ -34,7 +34,7 @@
     {
       "name": "ergast-api",
       "urls": [
-        "http://ergast.com/api/f1/**"
+        "https://ergast.com/api/f1/**"
       ],
       "cacheConfig": {
         "maxSize": 20,
